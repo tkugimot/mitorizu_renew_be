@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${MITORIZU_RENEW_BE_DB_URL}
+    username: ${MITORIZU_RENEW_BE_DB_USERNAME}
+    password: ${MITORIZU_RENEW_BE_DB_PASSWORD}
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/*.xml
+  type-aliases-package: chiemono.com.mitorizu.infrastructure.rdb.model
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+    cache-enabled: false
